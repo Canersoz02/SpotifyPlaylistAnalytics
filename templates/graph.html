@@ -1,0 +1,49 @@
+
+<html>
+<head>
+	<script>var link = "{{ link }}";</script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='/script.js') }}"></script>
+	<title>Home Page</title>
+	<style>
+		h1   {font-family: verdana; color: white;}
+		p    {font-family: verdana; color: white;}
+		div  {font-family: verdana;}
+		input[type=text] 
+			 {
+			  width: 70%;
+  			  padding: 12px 20px;
+  		      margin: 8px 0;
+  			  box-sizing: border-box;
+  			}
+  		input[type=submit], button{
+  			background-color: #2AF048;
+			border: none;
+			color: #110E2B;
+			padding: 16px 32px;
+			text-decoration: none;
+			margin: 4px 2px;
+			cursor: pointer;
+  		}
+	</style>
+</head> 
+	<body style="background-color:#110E2B;">
+		</br>
+		<h1>Average Playlist Qualities</h1>
+		<form action="#" method="post">
+			<p>Enter Playlist ID</p>
+			<p><input type="text" name="lnk"/></p>
+			<p><input type = "submit" value = "Generate Another Graph"/></p> 
+		</form>
+		<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
+         <p>Enter some categories that are relevant to your playlist seperated by commas (ex: category1, category2)</p>
+         <p> Choose categories from this list: pop, chill, rock, hiphop, indie_alt, party, rnb, instrumental, jazz, classical, soul, punk, kpop, blues, funk, country</p>
+         <p>Please wait for the graph to load before requesting a song recommendation, this might take a while.</p>
+         <p><input type = "text" id="fn"/></p>
+         <button id="submit" onclick="onSubmit();">Get recommendation!</button>
+		 </br>      
+         <div style="color: white;" id="result"></div>
+	</body>
+</html>
